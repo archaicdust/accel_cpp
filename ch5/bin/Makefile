@@ -1,13 +1,18 @@
 
-SOURCES=$(wildcard *.cc)
+PROGRAMS_SRC=$(wildcard *.cc)
+PROGRAMS=$(patsubst %.cc,%,$(PROGRAMS_SRC))
+
+SOURCES=$(wildcard ../src/*.cc)
 OBJECTS=$(patsubst %.cc,%.o,$(SOURCES))
 
 CXXFLAGS := -I../include
 
 PHONY := all
 
-all: $(OBJECTS)
+all: $(PROGRAMS)
 #	$(V)$(CXX) -o $@ $^
+
+$(PROGRAMS): LDLIBS += $(OBJECTS)
 
 ifeq (@, $(V))
 %.o: %.cc
