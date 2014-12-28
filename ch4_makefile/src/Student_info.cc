@@ -5,7 +5,7 @@ using std::vector;
 
 istream& read(istream& is, Student_info& s)
 {
-    is >> s.name >> s.midterm >> s.final_grade;
+    is >> s.name >> s.midterm >> s.finalterm;
 
     read_hw(is, s.homework);
     return is;
