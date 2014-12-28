@@ -7,7 +7,7 @@
 
 struct Student_info {
     std::string name;
-    double midterm, final_grade;
+    double midterm, finalterm;
     std::vector<double> homework;
 };
 

@@ -14,9 +14,9 @@ using std::domain_error;
 using std::sort;
 
 
-double grade(double midterm, double final_grade, double homework)
+double grade(double midterm, double finalterm, double homework)
 {
-    return 0.2 * midterm + 0.4 * final_grade + 0.4 * homework;
+    return 0.2 * midterm + 0.4 * finalterm + 0.4 * homework;
 }
 
 
@@ -37,11 +37,11 @@ double median(vector<double> vec)
 }
 
 
-double grade(double midterm, double final_grade, const vector<double>& hw)
+double grade(double midterm, double finalterm, const vector<double>& hw)
 {
     if (hw.size() == 0)
         throw domain_error("student has done no homework");
-    return grade(midterm, final_grade, median(hw));
+    return grade(midterm, finalterm, median(hw));
 }
 
 using std::istream;
@@ -66,8 +66,8 @@ int main()
     cout << "Hello, " << name << "!" << endl;
 
     cout << "Please enter your midterm and final grades: :";
-    double midterm, final_grade;
-    cin >> midterm >> final_grade;
+    double midterm, finalterm;
+    cin >> midterm >> finalterm;
 
     cout << "Enter your homework grades, "
         "followed by end-of-file: ";
@@ -78,7 +78,7 @@ int main()
     using std::streamsize;
     using std::setprecision;
     try {
-        double student_grade = grade(midterm, final_grade, homework);
+        double student_grade = grade(midterm, finalterm, homework);
         streamsize prec = cout.precision();
         cout << "Your final grade is " << setprecision(3)
              << student_grade << setprecision(prec) << endl;
