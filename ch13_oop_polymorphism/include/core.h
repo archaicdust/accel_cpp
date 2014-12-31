@@ -6,6 +6,8 @@
 #include <vector>
 
 class Core {
+    friend class Student_info;
+
 public:
     Core();
     Core(std::istream&);
@@ -22,6 +24,8 @@ protected:
     double midterm, finalterm;
     std::vector<double> homework;
 
+    virtual Core* clone() const { return new Core(*this); }
+
 private:
     std::string n;
 };
@@ -31,4 +35,5 @@ std::istream& read_hw(std::istream&, std::vector<double>&);
 bool compare(const Core&, const Core&);
 
 #endif
+
 

@@ -11,6 +11,9 @@ public:
     virtual double grade() const;
     virtual std::istream& read(std::istream&);
 
+protected:
+    virtual Grad* clone() const { return new Grad(*this); }
+
 private:
     double thesis;
 };
