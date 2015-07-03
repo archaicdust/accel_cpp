@@ -1,0 +1,5 @@
+linux hello world
+world
+apple
+arch linux linux
+say bye bye
