@@ -25,3 +25,5 @@ endif
 
 clean:
 	rm -rf *.o
+	rm -rf grade_hw_module
+	rm -rf grade_hw_module_list
