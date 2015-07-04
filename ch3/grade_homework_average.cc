@@ -24,9 +24,11 @@ int main()
     cout << "Enter your homework grades, "
         "followed by end-of-file: ";
 
+     // the number and sum of grades read so far
     int count = 0;
     double sum = 0;
 
+    // a variable into which to read
     double x;
 
     // invariant:
